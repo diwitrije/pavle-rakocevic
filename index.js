@@ -1,3 +1,4 @@
+    //GALERIJA
     const carousel = document.querySelector('.carousel');
     const items = document.querySelectorAll('.carousel-item');
     const leftArrow = document.querySelector('.arrow.left');
@@ -30,7 +31,7 @@
       index++;
       if(index >= totalItems) index = 0;
       updateCarousel();
-    }, 5000); // every 5 seconds
+    }, 5000); // svakih 5 sek
 
     // Pause on hover
     carousel.addEventListener('mouseenter', () => clearInterval(autoScroll));
@@ -42,6 +43,7 @@
       }, 4000);
     });*/
 
+    //READ MORE DUGMENCE
     function toggleReadMore() {
       const dots = document.getElementById("dots");
       const moreText = document.getElementById("more");
@@ -57,3 +59,39 @@
         moreText.style.display = "inline";
       }
     }
+    
+    //SWAJPOVIII
+    let startX = 0;
+    let endX = 0;
+    carousel.addEventListener('touchstart', (e) => {
+      startX = e.touches[0].clientX;
+    });
+
+    carousel.addEventListener('touchend', (e) => {
+      endX = e.changedTouches[0].clientX;
+      handleSwipe();
+    });
+
+    function handleSwipe() {
+      const deltaX = endX - startX;
+      const swipeThreshold = 50; // minimum px za swipe
+
+      if (deltaX > swipeThreshold) {
+        //swipe right - move carousel left
+        leftArrow.click();
+      } else if (deltaX < -swipeThreshold) {
+        //swipe left - move carousel right
+        rightArrow.click();
+      }
+    }
+
+    // tap kao hover za mobilni #mobilefriendly
+    const eventCards = document.querySelectorAll('.event-card');
+
+    eventCards.forEach(card => {
+      card.addEventListener('click', () => {
+        eventCards.forEach(c => c.classList.remove('active'));
+        card.classList.add('active');
+        });
+    });
+
