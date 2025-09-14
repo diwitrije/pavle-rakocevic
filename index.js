@@ -90,7 +90,6 @@
 
     eventCards.forEach(card => {
       card.addEventListener('click', () => {
-        eventCards.forEach(c => c.classList.remove('active'));
         card.classList.add('active');
         });
     });
