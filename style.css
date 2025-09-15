@@ -1,326 +1,320 @@
-    * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    }
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    body {
-    font-family: Arial, sans-serif;
-    color: #333;
-    }
+html {
+  scroll-behavior: smooth;
+}
 
-    a {
-    text-decoration: none;
-    color: inherit;
-    }
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+}
 
-    p {
-    text-align: justify;
-    text-justify: inter-word;  /* default, spreads words evenly */
-    line-height: 1.6;          /* adds readability */
-    }
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
-    img {
-    filter: grayscale(100%);
-    transition: filter 0.4s ease, transform 0.3s ease;
-    transform: scale(1);
-    }
+/* Paragraph text neat & justified */
+p {
+  text-align: justify;
+  text-justify: inter-word;
+  margin-bottom: 1.5rem;
+}
 
-    img:hover {
-    filter: grayscale(0%);
-    transform: scale(1.05);
-    }
+/* IMAGE hover effect */
+img {
+  max-width: 100%;
+  height: auto;
+  filter: grayscale(100%);
+  transition: filter 0.4s ease, transform 0.3s ease;
+  transform: scale(1);
+}
+img:hover {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
 
-    .hero {
-    display: flex;
-    min-height: 90vh;
-    }
+/* HERO SECTION */
+.hero {
+  display: flex;
+  min-height: 90vh;
+}
 
-    .hero-left {
-    flex: 1;
-    background: url('./images/slika_naslovna.jpg') no-repeat center center;
-    background-size: cover;
-    }
+.hero-left {
+  flex: 1;
+  background: url('./images/slika_naslovna.jpg') no-repeat center center;
+  background-size: cover;
+}
 
-    .hero-right {
-    flex: 1;
-    background-color: #000;
-    color: #fff;
-    display: flex;
+.hero-right {
+  flex: 1;
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 3rem 4rem;
+}
+
+.hero-right h1 {
+  font-family: 'Georgia', serif;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: bold;
+  margin-bottom: 1rem;
+  line-height: 1.1;
+}
+
+.hero-right .line {
+  width: 80%;
+  height: 2px;
+  background-color: #fff;
+  margin: 1rem 0;
+}
+
+.hero-right h2 {
+  font-family: 'Georgia', serif;
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: normal;
+  letter-spacing: 2px;
+}
+
+/* MENU */
+.menu {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: fixed;
+  top: 1rem;
+  right: 2rem;
+  font-family: 'Georgia', serif;
+  font-size: 1.1rem;
+  background-color: rgba(30, 30, 30, 0.1);
+  backdrop-filter: blur(5px);
+  z-index: 1000;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+}
+.menu a {
+  color: #fff;
+  transition: color 0.3s;
+}
+.menu a:hover {
+  color: #ccc;
+}
+
+/* CONTENT SECTIONS */
+.content {
+  padding: 4rem 2rem;
+}
+.content section {
+  margin-bottom: 3rem;
+}
+.content h2 {
+  font-family: 'Georgia', serif;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: clamp(1.8rem, 3vw, 2.2rem);
+}
+
+/* BIOGRAPHY table - responsive */
+.bio-section table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.bio-section td {
+  vertical-align: top;
+  padding: 0 1rem 1rem 0;
+}
+.bio-section img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+/* EVENTS */
+.events {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+.event-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+.event-card {
+  background: #f9f9f9;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.event-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+/* tap efekat mobilni za event cards */
+.event-card.active {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.event-card h3 {
+  margin-top: 0;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+.event-card p {
+  margin: 0 0 16px;
+  color: #555;
+}
+.past-events .event-card {
+  background: #f2f2f2;
+  opacity: 0.8;
+}
+.past-events .event-card:hover {
+  opacity: 1;
+}
+
+/* READ MORE */
+#readMoreBtn {
+  color: #000;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+#readMoreBtn:hover {
+  background-color:#ccc;
+}
+
+/* CONTACT */
+#contact-div {
+  text-align: center;
+}
+#contact-p {
+  text-align: center;
+}
+#metamorphosis-yt:hover {
+  color: grey;
+}
+
+/* GALLERY carousel */
+.carousel-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+.carousel {
+  display: flex;
+  gap: 1rem;
+  transition: transform 0.5s ease;
+}
+.carousel-item {
+  flex: 0 0 auto;
+  width: 300px;
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.carousel-item img {
+  width: 100%;
+  height: auto;
+  filter: grayscale(100%);
+  transition: filter 0.3s, transform 0.3s;
+}
+.carousel-item:hover img {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
+/* Caption overlay */
+.carousel-item .caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.5rem;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  text-align: center;
+  font-size: 0.9rem;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.carousel-item:hover .caption {
+  opacity: 1;
+}
+/* Arrow buttons */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  border: none;
+  font-size: 2rem;
+  padding: 0.2rem 0.6rem;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 3px;
+  transition: background 0.3s;
+}
+.arrow.left { left: 10px; }
+.arrow.right { right: 10px; }
+.arrow:hover { background: rgba(0,0,0,0.8); }
+
+/* MEDIA QUERIES — MOBILE FIRST */
+@media (max-width: 992px) {
+  .hero {
     flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 3rem 4rem;
-    }
+  }
+  .hero-left, .hero-right {
+    width: 100%;
+    min-height: 50vh;
+  }
+  .hero-right {
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+  }
+  .menu {
+    font-size: 1rem;
+    gap: 0.8rem;
+  }
+}
+@media (max-width: 768px) {
+  /* Biography stacks vertically */
+  .bio-section table,
+  .bio-section tr,
+  .bio-section td {
+    display: block;
+    width: 100%;
+  }
+  .bio-section td + td {
+    margin-top: 1.5rem;
+  }
 
-    .hero-right h1 {
-    font-family: 'Georgia', serif;
-    font-size: 5rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-    line-height: 1.1;
-    }
-    .menu {
-    display: flex;
-    gap: 2rem;
-    position: fixed;
-    top: 2rem;
-    right: 4rem;
-    font-family: 'Georgia', serif;
-    font-size: 1.2rem;
-    background-color: rgba(80, 80, 80, 0.4);
-    backdrop-filter: blur(5px);
-    z-index: 1000;
-    }
-
-    .menu a {
-    color: #fff;
-    transition: color 0.3s;
-    }
-
-    .menu a:hover {
-    color: #ccc;
-    }
-
-    .hero-right .line {
-    width: 80%; /* line stretches 80% of the right section */
-    height: 2px;
-    background-color: #fff;
-    margin: 1rem 0;
-    }
-
-    .hero-right h2 {
-    font-family: 'Georgia', serif;
+  /* Smaller hero text */
+  .hero-right h1 {
     font-size: 2.5rem;
-    font-weight: normal;
-    letter-spacing: 2px;
-    }
-
-    .content {
-    background-color: #f9f9f9;
-    padding: 4rem 2rem;
-    }
-
-    .content section {
-    margin-bottom: 3rem;
-    }
-
-    .content h2 {
-    font-family: 'Georgia', serif;
-    margin-bottom: 1rem;
-    }
-
-    .content p {
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-    }
-
-    @media(max-width: 768px){
-        .hero {
-        flex-direction: column;
-        }
-
-        .hero-left, .hero-right {
-        flex: none;
-        width: 100%;
-        min-height: 50vh;
-        }
-
-        .hero-right {
-        align-items: center;
-        text-align: center;
-        padding: 2rem;
-        }
-        .menu {
-        top: 1rem;
-        right: 2rem;
-        gap: 1rem;
-        font-size: 1rem;
-        }
-
-        .hero-right h1 {
-        font-size: 3rem;
-        }
-
-        .hero-right h2 {
-        font-size: 1.8rem;
-        }
-    }
-
-    @media(max-width: 768px) {
-        .bio-section table, .bio-section tr, .bio-section td {
-        display: block;
-        width: 100%;
-        }
-
-        .bio-section td + td {
-        margin-top: 1.5rem; /* space between text and image */
-        }
-    }
-
-    .events {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 60px 20px;
-    }
-
-    .events h2 {
-    text-align: center;
-    font-size: 2.2rem;
-    margin-bottom: 40px;
-    }
-
-    .event-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 24px;
-    }
-
-    .event-card {
-    background: #f9f9f9;
-    border-radius: 12px;
-    padding: 24px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    transition: transform .25s ease, box-shadow .25s ease;
-    }
-
-    .event-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-    }
-
-    .event-card h3 {
-    margin-top: 0;
-    font-size: 1.3rem;
-    margin-bottom: 10px;
-    }
-
-    .event-card p {
-    margin: 0 0 16px;
-    color: #555;
-    }
-
-    .past-events .event-card {
-    background: #f2f2f2;
-    opacity: 0.8;
-    }
-
-    .past-events .event-card:hover {
-    opacity: 1;
-    }
-
-    
-    #readMoreBtn {
-    color: #000;
-    border-radius: 5px;           /* Rounded corners */
-    text-decoration: none;        /* Remove underline */
-    font-weight: bold;
-    cursor: pointer;              /* Shows pointer on hover */
-    transition: background-color 0.3s, color 0.3s;
-    }
-
-    #readMoreBtn:hover {
-    background-color:#ccc
-    }
-
-    #contact-div{
-    text-align: center;
-    }
-    .carousel-wrapper {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    }
-
-    .carousel {
-    display: flex;
-    gap: 1rem;
-    transition: transform 0.5s ease;
-    }
-
-    .carousel-item {
-    flex: 0 0 auto;
-    width: 300px;
-    position: relative;
-    border-radius: 5px;
-    overflow: hidden;
-    }
-
-    /* Black & white images by default, pop to color on hover */
-    .carousel-item img {
-    width: 100%;
-    height: auto;
-    filter: grayscale(100%);
-    transition: filter 0.3s, transform 0.3s;
-    }
-
-    .carousel-item:hover img {
-    filter: grayscale(0%);
-    transform: scale(1.05);
-    }
-
-    /* Caption overlay */
-    .carousel-item .caption {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 0.5rem;
-    background: rgba(0,0,0,0.6);
-    color: #fff;
-    text-align: center;
-    font-size: 0.9rem;
-    opacity: 0;
-    transition: opacity 0.3s;
-    }
-
-    .carousel-item:hover .caption {
-    opacity: 1;
-    }
-
-    /* Arrow buttons */
-    .arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0,0,0,0.5);
-    color: #fff;
-    border: none;
-    font-size: 2rem;
-    padding: 0.2rem 0.6rem;
-    cursor: pointer;
-    z-index: 10;
-    border-radius: 3px;
-    transition: background 0.3s;
-    }
-
-    .arrow.left { left: 10px; }
-    .arrow.right { right: 10px; }
-    .arrow:hover { background: rgba(0,0,0,0.8); }
-
-    /* Responsive adjustments */
-    @media(max-width: 768px) {
-    .carousel-item { width: 80%; }
-    .arrow { font-size: 1.5rem; }
-    }
-
-    html {
-    scroll-behavior: smooth;
-    }
-
-    nav .home-icon i {
+  }
+  .hero-right h2 {
     font-size: 1.5rem;
-    color:#f9f9f9;
-    margin-right: 0.5rem;
-    }
+  }
 
-    nav .home-icon i:hover {
-    color: gray;
-    }
-    
-    #contact-p {
-    text-align: center;
-    }
-    #metamorphosis-yt:hover{
-    color:grey;
-    }
+  /* Carousel adapts */
+  .carousel-item {
+    width: 80%;
+  }
+  .arrow {
+    font-size: 1.5rem;
+  }
+}
