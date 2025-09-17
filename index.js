@@ -74,7 +74,11 @@
 
     function handleSwipe() {
       const deltaX = endX - startX;
+<<<<<<< HEAD
       const swipeThreshold = 50; // minimum px za swipe
+=======
+      const swipeThreshold = 25; // minimum px za swipe
+>>>>>>> cf87fb9d8b0a43e8464d1adf5b6d71f90a107ff4
 
       if (deltaX > swipeThreshold) {
         //swipe right - move carousel left
