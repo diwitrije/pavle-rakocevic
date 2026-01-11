@@ -207,6 +207,10 @@ img:hover {
   color: grey;
 }
 
+#metamorphosis-spotify:hover {
+  color: grey;
+}
+
 /* GALLERY carousel */
 .carousel-wrapper {
   position: relative;
